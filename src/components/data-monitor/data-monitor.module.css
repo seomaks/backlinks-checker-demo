@@ -1,0 +1,69 @@
+.dataMonitor {
+    position: relative;
+    margin: 50px 50px 20px 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.urlColumn {
+    word-spacing: 9px;
+}
+
+.entity {
+    display: inline-flex;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    width: 80%;
+}
+
+.status {
+    display: grid;
+    padding: 5px;
+}
+
+.redStatus {
+    color: red;
+    display: grid;
+    padding: 5px;
+}
+
+.link {
+    display: grid;
+    padding: 5px;
+}
+
+.redLink {
+    color: red;
+    display: grid;
+    padding: 5px;
+}
+
+.index {
+    display: grid;
+    padding: 5px;
+}
+
+.redIndex {
+    color: red;
+    display: grid;
+    padding: 5px;
+}
+
+.limits {
+    color: red;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    position: relative;
+    margin: 5px;
+}
+
+
