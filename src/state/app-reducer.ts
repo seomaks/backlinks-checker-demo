@@ -136,7 +136,6 @@ export const statusCodeTC = (links: EntitiesType, project: string): AppThunkType
 }
 
 export const dataResetTC = (): AppThunkType => dispatch => {
- // dispatch(setLinksAC([]))
   dispatch(setEntitiesAC([]))
   dispatch(setStatusCodeAC([]))
   dispatch(checkIndexingAC([]))
