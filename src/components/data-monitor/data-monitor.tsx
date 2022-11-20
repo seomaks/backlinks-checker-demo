@@ -25,6 +25,7 @@ export const DataMonitor = React.memo(() => {
   const statusCodes = useSelector<AppRootStateType, StatusCodesType>(state => state.app.statusCodes)
   const liveLinks = useSelector<AppRootStateType, EntitiesType>(state => state.app.liveLinks)
   const isIndexing = useSelector<AppRootStateType, EntitiesType>(state => state.app.isIndexing)
+  const pageIndexing = useSelector<AppRootStateType, EntitiesType>(state => state.app.pageIndexing)
   const limits = useSelector<AppRootStateType, null | string>(state => state.app.limits)
 
   const data: Array<any> = [{
@@ -38,6 +39,7 @@ export const DataMonitor = React.memo(() => {
     const headings = [[
       'URL',
       'Status code',
+      'PageIndexing',
       'Link',
       'Google index'
     ]];
@@ -52,12 +54,16 @@ export const DataMonitor = React.memo(() => {
       origin: 'B2',
       skipHeader: true
     });
-    utils.sheet_add_json(ws, liveLinks.map(link => [link]), {
+    utils.sheet_add_json(ws, pageIndexing.map(index => [index]), {
       origin: 'C2',
       skipHeader: true
     });
-    utils.sheet_add_json(ws, isIndexing.map(index => [index]), {
+    utils.sheet_add_json(ws, liveLinks.map(link => [link]), {
       origin: 'D2',
+      skipHeader: true
+    });
+    utils.sheet_add_json(ws, isIndexing.map(index => [index]), {
+      origin: 'E2',
       skipHeader: true
     });
     utils.book_append_sheet(wb, ws, 'Report');
@@ -94,6 +100,7 @@ export const DataMonitor = React.memo(() => {
               <TableCell style={{ width: "5%" }}><b>Check your result</b></TableCell>
               <TableCell align="right" style={{ width: "60%" }}>URL</TableCell>
               <TableCell align="right" style={{ width: "10%" }}>Status code</TableCell>
+              <TableCell align="right" style={{ width: "10%" }}>Page indexing</TableCell>
               <TableCell align="right" style={{ width: "10%" }}>Link</TableCell>
               <TableCell align="right" style={{ width: "10%" }}>Google Index</TableCell>
             </TableRow>
@@ -120,6 +127,10 @@ export const DataMonitor = React.memo(() => {
                   align="right">{statusCodes.map((status, index) => status === 200 ?
                   <p key={index} className={styles.status}>{status}</p> : <p key={index}
                                                                              className={styles.redStatus}>{status}</p>)}</TableCell>
+                <TableCell
+                  align="right">{pageIndexing.map((ind, index) => ind === 'Yep 😁' ?
+                  <p key={index} className={styles.index}>{ind}</p> :
+                  <p key={index} className={styles.redIndex}>{ind}</p>)}</TableCell>
                 <TableCell
                   align="right">{liveLinks.map((link, index) => link === 'Yep 😁' ?
                   <p key={index} className={styles.link}>{link}</p> :
