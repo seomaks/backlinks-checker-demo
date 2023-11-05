@@ -7,6 +7,7 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../state/store";
 import {
   EntitiesType,
+  setLinksAC,
   statusCodeTC
 } from "../../state/app-reducer";
 import {useAppDispatch} from "../../hooks/hooks";
@@ -15,7 +16,12 @@ export const LinksChecker = React.memo(() => {
   const dispatch = useAppDispatch()
   const links = useSelector<AppRootStateType, EntitiesType>(state => state.app.links)
   const project = useSelector<AppRootStateType, string>(state => state.app.project)
-  const value = links.join('\n')
+
+
+  const setItems = useCallback((e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    let links = (e.currentTarget.value).split('\n')
+    dispatch(setLinksAC(links))
+  },[dispatch])
 
   const handleKeyPress = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
     if(e.key === 'Enter'){
@@ -46,7 +52,8 @@ export const LinksChecker = React.memo(() => {
                 placeholder="Add your links"
                 multiline
                 rows={12}
-                value={value}
+                defaultValue={links.join('\n')}
+                onChange={setItems}
                 onKeyDown={handleKeyPress}
               />
             </div>

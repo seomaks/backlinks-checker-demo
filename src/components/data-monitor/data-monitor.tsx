@@ -77,20 +77,20 @@ export const DataMonitor = React.memo(() => {
   return (
     <div className={styles.dataMonitor}>
       <div className={styles.header}>
-      <div className={styles.buttons}>
-        <div className={styles.button}>
-        <Button variant="contained" onClick={handleExport}
-                className="btn btn-primary float-right">
-          Export
-        </Button>
+        <div className={styles.buttons}>
+          <div className={styles.button}>
+            <Button variant="contained" onClick={handleExport}
+                    className="btn btn-primary float-right">
+              Export
+            </Button>
+          </div>
+          <div className={styles.button}>
+            <Button variant="contained" onClick={handleReset}
+                    className="btn btn-primary float-right">
+              Clean
+            </Button>
+          </div>
         </div>
-        <div className={styles.button}>
-        <Button variant="contained" onClick={handleReset}
-                className="btn btn-primary float-right">
-          Clean
-        </Button>
-        </div>
-      </div>
         <div><p>limits: {limits !== null && limits.length <=2 ? <b className={styles.limits}>{limits}</b> : <b>{limits}</b>}</p></div>
       </div>
       <TableContainer component={Paper}>
@@ -115,11 +115,11 @@ export const DataMonitor = React.memo(() => {
                   {row.name}
                 </TableCell>
                 <TableCell align="right">{entities.map((entity, index) =><p className={styles.urlColumn}
-                                                                             key={index}><span className={styles.entity}>{entity}</span>&nbsp;
+                                                                            key={index}><span className={styles.entity}>{entity}</span>&nbsp;
                   <span>
                   <a href={entity} target="_blank" rel="noopener noreferrer"><i className="fa fa-external-link" aria-hidden="true"></i></a>
-                  &nbsp;
-                  <a href={`https://www.google.com/search?q=${entity}`} target="_blank" rel="noopener noreferrer"><i className="fa fa-google" aria-hidden="true"></i></a>
+                    &nbsp;
+                    <a href={`https://www.google.com/search?q=${entity}`} target="_blank" rel="noopener noreferrer"><i className="fa fa-google" aria-hidden="true"></i></a>
                 </span>
                 </p>)}
                 </TableCell>
@@ -147,4 +147,3 @@ export const DataMonitor = React.memo(() => {
     </div>
   )
 })
-

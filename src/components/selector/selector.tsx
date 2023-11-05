@@ -31,17 +31,8 @@ export const Selector = React.memo(() => {
             id: 'uncontrolled-native',
           }}
         >
-          <option value={'mightytips.com'}>mightytips.com</option>
-          <option value={'mightytips.net'}>mightytips.net</option>
-          <option value={'mightytips.ph'}>mightytips.ph</option>
-          <option value={'mightytips.info'}>mightytips.info</option>
-          <option value={'mightytips.hu'}>mightytips.hu</option>
-          <option value={'mightytips.com.br'}>mightytips.com.br</option>
-          <option value={'mightytips.biz'}>mightytips.biz</option>
-          <option value={'mightytips.pl'}>mightytips.pl</option>
-          <option value={'seobrotherslv.com'}>seobrotherslv.com</option>
-          <option value={'bonusowo.com'}>bonusowo.com</option>
-          <option value={'bonusowo.hu'}>bonusowo.hu</option>
+          <option value={'youtube.com'}>youtube.com</option>
+          <option value={'vimeo.com'} disabled={true}>vimeo.com</option>
         </NativeSelect>
       </FormControl>
     </div>
