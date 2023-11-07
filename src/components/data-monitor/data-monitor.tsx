@@ -119,7 +119,7 @@ export const DataMonitor = React.memo(() => {
                   <span>
                   <a href={entity} target="_blank" rel="noopener noreferrer"><i className="fa fa-external-link" aria-hidden="true"></i></a>
                     &nbsp;
-                    <a href={`https://www.google.com/search?q=${entity}`} target="_blank" rel="noopener noreferrer"><i className="fa fa-google" aria-hidden="true"></i></a>
+                    <a href={`https://www.google.com/search?q=site:${entity}`} target="_blank" rel="noopener noreferrer"><i className="fa fa-google" aria-hidden="true"></i></a>
                 </span>
                 </p>)}
                 </TableCell>
