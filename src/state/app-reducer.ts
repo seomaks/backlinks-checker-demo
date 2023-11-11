@@ -7,7 +7,10 @@ const initialState = {
   status: 'idle' as RequestStatusType,
   project: 'youtube.com',
   links: ['https://dev.to/react-rainbow/21-react-youtube-channels-you-should-follow-al2',
-    'https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router'] as EntitiesType,
+    'https://www.dreamhost.com/blog/blogging-tools/',
+    'https://www.godaddy.com/resources/skills/how-to-build-a-website-with-html-and-css',
+    'https://metro.co.uk/2023/09/27/arsenal-legend-names-tottenham-star-as-one-of-the-best-signings-of-the-summer-19565834/',
+    'https://www.nytimes.com/news-about'] as EntitiesType,
   entities: [] as EntitiesType,
   statusCodes: [] as StatusCodesType,
   isIndexing: [] as EntitiesType,
@@ -88,7 +91,7 @@ export const statusCodeTC = (links: EntitiesType, project: string): AppThunkType
       )
     )
 
-  let googleRequest = await searchAPI.getRequest(links.map(l=>l.replaceAll(':','%3A').replaceAll('/','%2F')))
+  let googleRequest = await searchAPI.getRequest(links.map(l => l.replaceAll(':', '%3A').replaceAll('/', '%2F')))
     .then(results => results.map(response => response
         .then(res => {
           dispatch(checkLimitsAC(res.headers["date"]))
