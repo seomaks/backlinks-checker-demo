@@ -55,6 +55,9 @@ export const LinksChecker = React.memo(() => {
                 defaultValue={links.join('\n')}
                 onChange={setItems}
                 onKeyDown={handleKeyPress}
+                InputProps={{
+                  readOnly: true,
+                }}
               />
             </div>
           </Box>

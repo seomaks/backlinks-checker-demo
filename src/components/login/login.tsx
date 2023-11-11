@@ -38,12 +38,10 @@ export const Login = () => {
 
   return <Grid container justifyContent={'center'}>
     <Grid item justifyContent={'center'}>
-
       <h1>Hello!</h1>
       <h3>To try a test version of Links Checker:</h3>
       <p><b>Email</b>: admin@gmail.com</p>
       <p><b>Password</b>: 12345</p>
-
       <form onSubmit={formik.handleSubmit}>
         <FormControl>
           <FormGroup>
