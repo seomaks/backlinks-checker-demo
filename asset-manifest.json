@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/backlinks-checker-demo/static/css/main.c3399568.css",
-    "main.js": "/backlinks-checker-demo/static/js/main.b96524bb.js",
+    "main.js": "/backlinks-checker-demo/static/js/main.f34a16dd.js",
     "static/js/787.f5de709d.chunk.js": "/backlinks-checker-demo/static/js/787.f5de709d.chunk.js",
     "index.html": "/backlinks-checker-demo/index.html",
     "main.c3399568.css.map": "/backlinks-checker-demo/static/css/main.c3399568.css.map",
-    "main.b96524bb.js.map": "/backlinks-checker-demo/static/js/main.b96524bb.js.map",
+    "main.f34a16dd.js.map": "/backlinks-checker-demo/static/js/main.f34a16dd.js.map",
     "787.f5de709d.chunk.js.map": "/backlinks-checker-demo/static/js/787.f5de709d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3399568.css",
-    "static/js/main.b96524bb.js"
+    "static/js/main.f34a16dd.js"
   ]
 }
